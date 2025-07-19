@@ -23,7 +23,7 @@
   </footer>
 
   <!-- IBM Watson Assistant -->
-  <script>
+  <!-- <script>
     window.watsonAssistantChatOptions = {
       integrationID: "0360956d-6700-4923-ae59-5280cfe37714", // The ID of this integration.
       region: "us-south", // The region your integration is hosted in.
@@ -35,7 +35,22 @@
       t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
       document.head.appendChild(t);
     });
-  </script>
+  </script> -->
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "35a1c7aa-f7a1-4458-8d41-3ce79ff9ed55", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "1d6f7418-0430-42ae-98f1-8e9bb4ba78e6", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+
 </body>
 
 </html>
